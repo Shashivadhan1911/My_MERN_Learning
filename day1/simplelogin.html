@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <form method="post" action="/class.html" name="f1" onsubmit="return validate()">
+        <label>name : </label><input type="text" name="name1" >
+        <br>
+        <label>password : </label><input type="password" name="pas1" id ="pass">
+        <br>
+        <input type="submit" value="login"><input type="reset" value="clear">
+
+        <!-- event listener -->
+         <br>
+         <br>
+        <h3>---- evnent listening in javascript ----- </h3>
+        <input type="button" id="b1", value="click me">
+    </form>
+    <script>
+        function validate(){
+            var y=document.f1.name1.value;
+            //var a = document.forms["f1"]["name1"].value;
+            var z=document.f1.pas1.value
+            //var b = document.forms["f1"]["pass1"].value;
+            //document.writeln(y);
+            if (y==""&&z==""){
+                alert("credentials missing");
+                return false;
+            }
+            else if(y==""){
+                alert("name missing");
+                return false;
+            }
+            else if (z==""){
+                alert("password missing");
+                return false;
+            }
+        }
+
+        //by object
+        //var a = document.forms["f1"]["name1"].value;
+
+
+        // adding event listening
+        document.getElementById("b1").addEventListener("click",function(){alert("Hell0 User")});
+    </script>
+</body>
+</html>
