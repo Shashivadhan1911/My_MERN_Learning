@@ -1,8 +1,9 @@
 // Connect to MongoDB and perform basic operations
 
 // Open terminal and run the following commands:
-
+```mongodb
 mongosh
+```
 
 // Show current databases
 // similar to "show databases" in SQL
@@ -56,4 +57,5 @@ db.userdata.deleteOne({ name: "Mike" })
 db.userdata.find()  
 
 // Exit the MongoDB shell
+
 exit
