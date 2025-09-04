@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #7bdeffa9;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(12, 12, 159);
+            padding: 20px;
+        }
+        .control {
+            margin: 20px 0;
+        }
+        button {
+            margin: 5px;
+            padding: 8px 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #p1 {
+            margin: 20px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .colored {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Day Two</h1>
+    <br>
+    <span id="sp"></span>
+    
+    <h1>jQuery starter</h1>
+    <div class="control">
+        <button id="hide">Hide</button>
+        <button id="show">Show</button>
+        <button id="nth">Color 3rd</button>
+        <button id="reset">Reset</button>
+        <button id="btn1">Toggle Paragraph</button>
+        <br>
+        <input type="text" id="titletxt" placeholder="Enter new title">
+        <button id="apply">Apply Title</button>
+    </div>
+    
+    <p id="p1">This is a paragraph to show/hide/toggle.</p>
+    <p>Second paragraph for testing</p>
+    <p>Third paragraph to color</p>
+    <p>Fourth paragraph</p>
+
+<script>
+    $(function(){
+        // Toggle paragraph visibility
+        $('#btn1').on("click", function(){
+            $('#p1').toggle();
+        });
+
+        // Apply new title
+        $('#apply').on("click", function(){
+            let newtitle = $('#titletxt').val().trim();
+            if(newtitle){
+                document.title = newtitle; 
+                $('h1').first().text(newtitle);
+            }
+        });
+
+        // Hide paragraph
+        $('#hide').on("click", function(){
+            $('#p1').hide();
+        });
+
+        // Show paragraph
+        $('#show').on("click", function(){
+            $('#p1').show();
+        });
+
+        // Color the 3rd paragraph
+        $('#nth').on("click", function(){
+            $('p:nth-child(3)').addClass('colored');
+        });
+
+        // Reset everything
+        $('#reset').on("click", function(){
+            $('#p1').show();
+            $('p').removeClass('colored');
+            $('#titletxt').val('');
+            $('h1').first().text('Day Two');
+            document.title = 'Document';
+        });
+    });
+</script>
+</body>
+</html>

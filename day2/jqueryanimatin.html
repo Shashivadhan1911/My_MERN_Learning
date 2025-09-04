@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Box Animation</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+        }
+
+        .animation-area {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 20px 0;
+            position: relative;
+            height: 400px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .animated-box {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border-radius: 10px;
+            position: absolute;
+            top: 160px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            border: 3px solid white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        button {
+            background: linear-gradient(45deg, #ff9a56, #ff6b6b);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #ff6b6b, #ff9a56);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .speed-controls {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .speed-btn {
+            padding: 8px 15px;
+            font-size: 12px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .speed-btn.active {
+            background: #4ecdc4;
+            border-color: #4ecdc4;
+        }
+
+        .info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            backdrop-filter: blur(5px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 jQuery Box Animation Playground</h1>
+        
+        <div class="animation-area">
+            <div class="animated-box" id="box">📦</div>
+        </div>
+
+        <div class="speed-controls">
+            <span>Animation Speed:</span>
+            <button class="speed-btn active" data-speed="1000">Slow</button>
+            <button class="speed-btn" data-speed="500">Medium</button>
+            <button class="speed-btn" data-speed="200">Fast</button>
+        </div>
+
+        <div class="controls">
+            <button id="moveRight">Move Right →</button>
+            <button id="moveLeft">← Move Left</button>
+            <button id="moveUp">↑ Move Up</button>
+            <button id="moveDown">↓ Move Down</button>
+            <button id="grow">🔍 Grow</button>
+            <button id="shrink">🔍 Shrink</button>
+            <button id="fadeOut">👻 Fade Out</button>
+            <button id="fadeIn">✨ Fade In</button>
+            <button id="rotate">🔄 Rotate</button>
+            <button id="bounce">⚡ Bounce</button>
+            <button id="slide">🏃 Slide</button>
+            <button id="pulse">💓 Pulse</button>
+            <button id="shake">📳 Shake</button>
+            <button id="rainbow">🌈 Rainbow</button>
+            <button id="reset">🔄 Reset</button>
+            <button id="combo">🎪 Combo!</button>
+        </div>
+
+        <div class="info">
+            <p><strong>Instructions:</strong> Click any button to animate the box! Try different speeds and combine animations.</p>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            let currentSpeed = 1000;
+            let isAnimating = false;
+
+            // Speed control
+            $('.speed-btn').click(function() {
+                $('.speed-btn').removeClass('active');
+                $(this).addClass('active');
+                currentSpeed = parseInt($(this).data('speed'));
+            });
+
+            // Reset function
+            function resetBox() {
+                $('#box').stop(true, true).css({
+                    'left': '50%',
+                    'top': '160px',
+                    'width': '80px',
+                    'height': '80px',
+                    'opacity': '1',
+                    'transform': 'translateX(-50%) rotate(0deg)',
+                    'background': 'linear-gradient(45deg, #ff6b6b, #4ecdc4)',
+                    'border-radius': '10px'
+                });
+                isAnimating = false;
+            }
+
+            // Basic movements
+            $('#moveRight').click(function() {
+                if (!isAnimating) {
+                    isAnimating = true;
+                    $('#box').animate({left: '+=150px'}, currentSpeed, function() {
+                        isAnimating = false;
+                    });
+                }
+            });
+
+            $('#moveLeft').click(function() {
+                if (!isAnimating) {
+                    isAnimating = true;
+                    $('#box').animate({left: '-=150px'}, currentSpeed, function() {
+                        isAnimating = false;
+                    });
+                }
+            });
+
+            $('#moveUp').click(function() {
+                if (!isAnimating) {
+                    isAnimating = true;
+                    $('#box').animate({top: '-=100px'}, currentSpeed, function() {
+                        isAnimating = false;
+                    });
+                }
+            });
+
+            $('#moveDown').click(function() {
+                if (!isAnimating) {
+                    isAnimating = true;
+                    $('#box').animate({top: '+=100px'}, currentSpeed, function() {
+                        isAnimating = false;
+                    });
+                }
+            });
+
+            // Size animations
+            $('#grow').click(function() {
+                if (!isAnimating) {
+                    isAnimating = true;
+                    $('#box').animate({
+                        width: '120px',
+                        height: '120px'
+                    }, currentSpeed, function() {
+                        isAnimating = false;
+                    });
+                }
+            });
+
+            $('#shrink').click(function() {
+                if (!isAnimating) {
+                    isAnimating = true;
+                    $('#box').animate({
+                        width: '40px',
+                        height: '40px'
+                    }, currentSpeed, function() {
+                        isAnimating = false;
+                    });
+                }
+            });
+
+            // Opacity animations
+            $('#fadeOut').click(function() {
+                if (!isAnimating) {
+                    isAnimating = true;
+                    $('#box').animate({opacity: 0.1}, currentSpeed, function() {
+                        isAnimating = false;
+                    });
+                }
+            });
+
+            $('#fadeIn').click(function() {
+                if (!isAnimating) {
+                    isAnimating = true;
+                    $('#box').animate({opacity: 1}, currentSpeed, function() {
+                        isAnimating = false;
+                    });
+                }
+            });
+
+            // Custom animations
+            $('#rotate').click(function() {
+                if (!isAnimating) {
+                    isAnimating = true;
+                    let currentRotation = 0;
+                    let rotateInterval = setInterval(function() {
+                        currentRotation += 10;
+                        $('#box').css('transform', 'translateX(-50%) rotate(' + currentRotation + 'deg)');
+                    }, 50);
+                    
+                    setTimeout(function() {
+                        clearInterval(rotateInterval);
+                        isAnimating = false;
+                    }, currentSpeed);
+                }
+            });
+
+            $('#bounce').click(function() {
+                if (!isAnimating) {
+                    isAnimating = true;
+                    $('#box').animate({top: '-=50px'}, currentSpeed/4)
+                           .animate({top: '+=50px'}, currentSpeed/4)
+                           .animate({top: '-=30px'}, currentSpeed/4)
+                           .animate({top: '+=30px'}, currentSpeed/4, function() {
+                               isAnimating = false;
+                           });
+                }
+            });
+
+            $('#slide').click(function() {
+                if (!isAnimating) {
+                    isAnimating = true;
+                    $('#box').animate({left: '200px'}, currentSpeed/2)
+                           .animate({left: '50%'}, currentSpeed/2, function() {
+                               isAnimating = false;
+                           });
+                }
+            });
+
+            $('#pulse').click(function() {
+                if (!isAnimating) {
+                    isAnimating = true;
+                    $('#box').animate({
+                        width: '100px',
+                        height: '100px',
+                        opacity: 0.7
+                    }, currentSpeed/2).animate({
+                        width: '80px',
+                        height: '80px',
+                        opacity: 1
+                    }, currentSpeed/2, function() {
+                        isAnimating = false;
+                    });
+                }
+            });
+
+            $('#shake').click(function() {
+                if (!isAnimating) {
+                    isAnimating = true;
+                    let shakeCount = 0;
+                    let shakeInterval = setInterval(function() {
+                        let randomX = Math.random() * 20 - 10;
+                        let randomY = Math.random() * 20 - 10;
+                        $('#box').css('transform', 'translateX(calc(-50% + ' + randomX + 'px)) translateY(' + randomY + 'px)');
+                        shakeCount++;
+                        if (shakeCount > currentSpeed / 50) {
+                            clearInterval(shakeInterval);
+                            $('#box').css('transform', 'translateX(-50%)');
+                            isAnimating = false;
+                        }
+                    }, 50);
+                }
+            });
+
+            $('#rainbow').click(function() {
+                if (!isAnimating) {
+                    isAnimating = true;
+                    let colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#ffeaa7', '#fd79a8'];
+                    let colorIndex = 0;
+                    let colorInterval = setInterval(function() {
+                        $('#box').css('background', colors[colorIndex]);
+                        colorIndex = (colorIndex + 1) % colors.length;
+                    }, 200);
+                    
+                    setTimeout(function() {
+                        clearInterval(colorInterval);
+                        $('#box').css('background', 'linear-gradient(45deg, #ff6b6b, #4ecdc4)');
+                        isAnimating = false;
+                    }, currentSpeed);
+                }
+            });
+
+            $('#combo').click(function() {
+                if (!isAnimating) {
+                    isAnimating = true;
+                    $('#box').animate({
+                        left: '200px',
+                        top: '100px',
+                        width: '120px',
+                        height: '120px'
+                    }, currentSpeed).animate({
+                        left: '50px',
+                        top: '200px',
+                        opacity: 0.3
+                    }, currentSpeed).animate({
+                        left: '50%',
+                        top: '160px',
+                        width: '80px',
+                        height: '80px',
+                        opacity: 1
+                    }, currentSpeed, function() {
+                        isAnimating = false;
+                    });
+                }
+            });
+
+            $('#reset').click(function() {
+                resetBox();
+            });
+
+            // Prevent multiple animations
+            $('button').click(function(e) {
+                if (isAnimating && this.id !== 'reset') {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
