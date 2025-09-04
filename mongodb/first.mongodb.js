@@ -4,7 +4,6 @@
 
 mongosh
 
-
 // Show current databases
 // similar to "show databases" in SQL
 // check current db is: db
@@ -56,7 +55,13 @@ db.userdata.deleteOne({ name: "Mike" })
 // Final query to see all documents
 db.userdata.find()  
 
+// Drop the collection
+//like "drop table" in SQL
+db.userdata.drop() 
+
+// Drop the database
+//like "drop database" in SQL
+db.dropDatabase()  // Drop the database
+
 // Exit the MongoDB shell
-
 exit
-
