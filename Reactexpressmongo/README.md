@@ -1,1 +1,1 @@
-# connected React + Vite + Express + MongoDB
+# React + Vite + Express + MongoDB
