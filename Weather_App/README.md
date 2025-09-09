@@ -64,6 +64,17 @@ VITE_WEATHER_API_KEY=your_api_key_here
 const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
 ```
 
+## 📸 Application Screenshots
+
+### Form Interface & Application Output
+*Clean, dark-themed landing interface showing the search functionality with placeholder text "Enter city name" and the prominent "Get Weather" button. The minimalist design features a cloud icon and demonstrates the app's modern, user-friendly approach to weather data input.*
+![Structure](structure.png)
+<div align="center">
+  <img src="delhi.png" alt="New Delhi Weather" width="45%" />
+  <img src="dubai.png" alt="Dubai Weather" width="45%" />
+</div>
+
+
 ## 🚀 Usage
 
 1. Open the app in your browser (default: `http://localhost:5173/`).
