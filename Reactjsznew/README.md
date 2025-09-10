@@ -40,6 +40,14 @@ A modern, secure payment gateway built with the MERN stack, featuring multiple p
 - **Prettier** - Code Formatting
 - **Nodemon** - Development Server
 
+<div align="center">
+  <img src="delhi.png" alt="New Delhi Weather" width="45%" />
+  <img src="dubai.png" alt="Dubai Weather" width="45%" />
+</div>
+<div align="center">
+  <img src="delhi.png" alt="New Delhi Weather" width="45%" />
+  <img src="dubai.png" alt="Dubai Weather" width="45%" />
+</div>
 ## 🚀 Quick Start
 
 ### Prerequisites
