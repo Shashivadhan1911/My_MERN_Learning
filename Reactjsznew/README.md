@@ -40,13 +40,16 @@ A modern, secure payment gateway built with the MERN stack, featuring multiple p
 - **Prettier** - Code Formatting
 - **Nodemon** - Development Server
 
+## 📸 Application Screenshots
+
+### Form Interface & Application Output
 <div align="center">
-  <img src="delhi.png" alt="New Delhi Weather" width="45%" />
-  <img src="dubai.png" alt="Dubai Weather" width="45%" />
+  <img src="landingpage.png" alt="New Delhi Weather" width="45%" />
+  <img src="payment.png" alt="Dubai Weather" width="45%" />
 </div>
 <div align="center">
-  <img src="delhi.png" alt="New Delhi Weather" width="45%" />
-  <img src="dubai.png" alt="Dubai Weather" width="45%" />
+  <img src="razorpay.png" alt="New Delhi Weather" width="45%" />
+  <img src="success.png" alt="Dubai Weather" width="45%" />
 </div>
 ## 🚀 Quick Start
 
