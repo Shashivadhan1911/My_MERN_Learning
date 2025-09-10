@@ -1,0 +1,164 @@
+/* Import Google Fonts for attractive typography */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f0f0f0;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Welcome page styles */
+.welcome-container {
+  text-align: center;
+  background: rgba(8, 91, 246, 0.85);
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 1.2s ease-in-out;
+  color: #e0e7ff;
+}
+
+.welcome-nav {
+  margin-bottom: 40px;
+}
+
+.welcome-nav a {
+  display: inline-block;
+  margin: 0 18px;
+  padding: 12px 28px;
+  text-decoration: none;
+  color: #a5b4fc;
+  font-weight: 600;
+  border-radius: 30px;
+  transition: all 0.4s ease;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 15px rgba(165, 180, 252, 0.4);
+}
+
+.welcome-nav a:hover {
+  background: #a5b4fc;
+  color: #1e3c72;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(165, 180, 252, 0.7);
+}
+
+.welcome-container h1 {
+  font-size: 3rem;
+  margin-bottom: 25px;
+  color: #e0e7ff;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.05em;
+}
+
+/* Home page styles */
+.home-container {
+  background: rgba(42, 82, 152, 0.85);
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  animation: slideIn 1.2s ease-in-out;
+  text-align: center;
+  color: #e0e7ff;
+}
+
+.home-container h1 {
+  font-size: 2.5rem;
+  color: #e0e7ff;
+  letter-spacing: 0.03em;
+  margin-bottom: 15px;
+}
+
+/* Payment page styles */
+.payment-container {
+  background: rgba(42, 82, 152, 0.85);
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  animation: zoomIn 1.2s ease-in-out;
+  text-align: center;
+  color: #e0e7ff;
+}
+
+.payment-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 35px;
+  color: #e0e7ff;
+  letter-spacing: 0.03em;
+}
+
+.pay-button {
+  background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+  color: white;
+  border: none;
+  padding: 18px 36px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 25px rgba(255, 75, 43, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pay-button:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 35px rgba(255, 75, 43, 0.85);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .welcome-container, .home-container, .payment-container {
+    padding: 30px;
+    margin: 15px;
+  }
+
+  .welcome-container h1, .home-container h1, .payment-container h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-nav a {
+    display: block;
+    margin: 12px 0;
+  }
+
+  .pay-button {
+    width: 100%;
+  }
+}
