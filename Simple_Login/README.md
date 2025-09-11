@@ -20,16 +20,26 @@ A modern, full-stack authentication application built with the MERN stack that p
 
 ## 🖼️ Screenshots
 
-### Login Interface
+<div align="center">
+  <img src="login.png" alt="login" width="45%" />
+  <img src="welcome.png" alt="welcome" width="45%" /> 
+</div>
+<div align="center">
+  <img src="register.png" alt="register" width="45%" />
+  <img src="api.png" alt="ap" width="45%" />
+</div>
+
+
+*Login Interface*:
 Clean and intuitive login form with easy navigation to registration.
 
-### Registration Form  
+*Registration Form*:
 Comprehensive registration with password confirmation and duplicate user detection.
 
-### Welcome Dashboard
+*Welcome Dashboard*:
 Success page displayed after successful authentication.
 
-### API Response
+*API Response*:
 JSON API responses showing user data structure.
 
 ## 🛠️ Tech Stack
@@ -229,5 +239,6 @@ This project is licensed under the **ISC License** - see the [LICENSE](LICENSE) 
 Created with ❤️ for learning full-stack development with the MERN stack.
 
 ---
+
 
 ⭐ **Star this repository if you found it helpful!**
