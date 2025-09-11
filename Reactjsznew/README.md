@@ -44,7 +44,7 @@ A modern, secure payment gateway built with the MERN stack, featuring multiple p
 
 ### Form Interface & Application Output
 <div align="center">
-  <img src="landingpage.png" alt="New Delhi Weather" width="45%" />
+  <img src="landingpage.png" alt="Landing Page" width="45%" />
   <img src="payment.png" alt="Dubai Weather" width="45%" />
 </div>
 <div align="center">
