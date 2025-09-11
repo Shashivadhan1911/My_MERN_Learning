@@ -51,6 +51,7 @@ A modern, secure payment gateway built with the MERN stack, featuring multiple p
   <img src="razorpay.png" alt="New Delhi Weather" width="45%" />
   <img src="success.png" alt="Dubai Weather" width="45%" />
 </div>
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -64,10 +65,6 @@ Make sure you have the following installed:
 ### Installation
 
 1. **Clone the repository**
-```bash
-git clone https://github.com/yourusername/payment-gateway.git
-cd payment-gateway
-```
 
 2. **Install dependencies**
 ```bash
@@ -90,9 +87,7 @@ Create `.env` files in both client and server directories:
 **Server `.env`:**
 ```env
 # Database
-MONGODB_URI=mongodb://localhost:27017/payment-gateway
-# or for MongoDB Atlas:
-# MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/payment-gateway
+MONGODB_URL
 
 # Server Configuration
 PORT=5000
