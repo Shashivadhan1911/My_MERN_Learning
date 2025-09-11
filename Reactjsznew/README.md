@@ -48,7 +48,7 @@ A modern, secure payment gateway built with the MERN stack, featuring multiple p
   <img src="payment.png" alt="Payment Page" width="45%" />
 </div>
 <div align="center">
-  <img src="razorpay.png" alt="New Delhi Weather" width="45%" />
+  <img src="razorpay.png" alt="Razorpay" width="45%" />
   <img src="success.png" alt="Dubai Weather" width="45%" />
 </div>
 
