@@ -1,0 +1,97 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  background: linear-gradient(to bottom, #2193b0, #6dd5ed);
+  background-attachment: fixed;
+
+  color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container for login and register forms */
+.App {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Headings */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #61dafb;
+}
+
+/* Buttons */
+button {
+  background-color: #61dafb;
+  border: none;
+  color: #121212;
+  padding: 10px 20px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #21a1f1;
+}
+
+/* Form inputs */
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  margin-bottom: 12px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+}
+
+/* Labels */
+label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Message paragraph */
+p {
+  text-align: center;
+  margin-top: 15px;
+  color: #ff6b6b;
+}
+
+/* Welcome page styles */
+.welcome {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 15px rgb(241, 16, 16);
+}
+
+.welcome h1 {
+  color: #61dafb;
+  margin-bottom: 15px;
+}
+
+.welcome p {
+  font-size: 1.2em;
+  color: #ccc;
+}
