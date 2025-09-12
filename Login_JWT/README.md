@@ -17,9 +17,15 @@
 
 ## 📸 Preview
 
-| Login | Register | Dashboard |
-|-------|----------|-----------|
-| ![Login](./screenshots/login.png) | ![Register](./screenshots/register.png) | ![Dashboard](./screenshots/welcome.png) |
+<div align="center">
+  <img src="login.png" alt="login" width="45%" />
+  <img src="register.png" alt="register" width="45%" />
+  
+</div>
+<div align="center">
+  <img src="welcome.png" alt="welcome" width="45%" /> 
+  <img src="api.png" alt="ap" width="45%" />
+</div>
 
 ## ⚡ Quick Start
 
@@ -75,7 +81,7 @@ cd frontend && npm run dev
 {
   "name": "John Doe",
   "email": "john@example.com", 
-  "password": "password123",
+  "password": "password123",//will be hashed in Database
   "role": "user"
 }
 ```
@@ -84,7 +90,7 @@ cd frontend && npm run dev
 ```json
 {
   "email": "john@example.com",
-  "password": "password123"
+  "password": "password123"//will be hashed in Database
 }
 ```
 
@@ -120,3 +126,4 @@ JWT/
 ---
 
 ⭐ **Star this repo if you found it helpful!**
+
