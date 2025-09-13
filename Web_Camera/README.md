@@ -22,6 +22,18 @@ A full-stack web application that allows users to capture images using their web
 - MongoDB with Mongoose
 - CORS middleware
 
+## 📸 Preview
+
+<div align="center">
+  <img src="webcapture.png" alt="login" width="45%" />
+   <img src="gallery.png" alt="welcome" width="45%" />
+</div>
+<div align="center">
+   <img src="preview.png" alt="register" width="45%" />
+  <img src="api.png" alt="ap" width="45%" />
+</div>
+
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -143,3 +155,4 @@ Webcam functionality requires HTTPS in production environments.
 ---
 
 **Made with ❤️ using React and Node.js**
+
