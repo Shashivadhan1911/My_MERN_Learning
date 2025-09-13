@@ -1,0 +1,10 @@
+.webcam-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.webcam {
+  border-radius: 10px;
+  box-shadow: var(--box-shadow-preview);
+}

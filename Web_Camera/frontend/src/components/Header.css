@@ -1,0 +1,41 @@
+.app-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.app-heading {
+  font-size: var(--font-size-app-heading);
+  color: var(--color-white);
+  margin: 0;
+  text-shadow: var(--text-shadow-app-heading);
+  font-weight: var(--font-weight-bold);
+}
+
+.navigation {
+  margin-top: 10px;
+}
+
+.navigation button {
+  background: linear-gradient(45deg, var(--color-neon-cyan), var(--color-neon-pink));
+  color: var(--color-white);
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+.navigation button:hover {
+  background: linear-gradient(45deg, var(--color-neon-pink), var(--color-neon-cyan));
+  box-shadow: 0 0 15px rgba(255, 0, 128, 0.7);
+  transform: translateY(-2px);
+}
+
+.navigation button.active {
+  background: linear-gradient(45deg, var(--color-neon-green), var(--color-neon-cyan));
+  box-shadow: 0 0 15px rgba(0, 255, 128, 0.7);
+}

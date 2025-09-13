@@ -1,0 +1,34 @@
+.preview-section {
+  text-align: center;
+  animation: fadeIn 0.5s ease-in;
+  margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.preview-heading {
+  font-size: var(--font-size-preview-heading);
+  color: var(--color-white);
+  margin-bottom: 15px;
+  text-shadow: var(--text-shadow-preview-heading);
+}
+
+.preview-image {
+  border: 3px solid var(--color-white);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow-preview);
+  transition: transform 0.3s ease;
+}
+
+.preview-image:hover {
+  transform: scale(1.05);
+}

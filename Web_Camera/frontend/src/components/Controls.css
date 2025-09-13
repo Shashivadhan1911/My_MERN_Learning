@@ -1,0 +1,55 @@
+.controls-section {
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.capture-btn, .upload-btn {
+  padding: var(--padding-btn);
+  font-size: var(--font-size-btn);
+  border: none;
+  border-radius: var(--btn-border-radius);
+  cursor: pointer;
+  transition: var(--transition-default);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: var(--box-shadow-btn);
+}
+
+.capture-btn {
+  background: linear-gradient(45deg, var(--color-btn-capture-start), var(--color-btn-capture-end));
+  color: var(--color-white);
+}
+
+.capture-btn:hover {
+  background: linear-gradient(45deg, var(--color-btn-capture-end), var(--color-btn-capture-start));
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-btn-hover-capture);
+}
+
+.capture-btn.pulse {
+  animation: pulse 2s infinite;
+}
+
+.upload-btn {
+  background: linear-gradient(45deg, var(--color-btn-upload-start), var(--color-btn-upload-end));
+  color: var(--color-white);
+}
+
+.upload-btn:hover:not(:disabled) {
+  background: linear-gradient(45deg, var(--color-btn-upload-end), var(--color-btn-upload-start));
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-btn-hover-upload);
+}
+
+.upload-btn:disabled {
+  background: linear-gradient(45deg, #ccc, #aaa);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
