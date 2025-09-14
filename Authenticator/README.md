@@ -1,88 +1,124 @@
-# Banking App
+# Authenticator
 
-## Project Description
-This is a MERN stack Banking App that provides OTP-based authentication using phone numbers. The backend is built with Express.js and MongoDB, while the frontend is a React application built with Vite. Users can register, login using OTP sent via SMS (using Twilio), and access a simple dashboard.
+A secure MERN stack banking application with OTP-based authentication using phone numbers.
 
-## Features
-- User registration with phone number
-- OTP generation and verification for authentication
-- JWT-based session management
-- Basic user dashboard displaying phone and balance
-- Secure backend API with protected routes
+## ✨ Features
 
-## Tech Stack
-- Backend: Node.js, Express.js, MongoDB, Mongoose, JWT, Twilio
-- Frontend: React, Vite, Axios
-- Other: dotenv for environment variables, CORS, body-parser
+- 📱 Phone number registration & login
+- 🔐 OTP verification via SMS (Twilio)
+- 🎫 JWT-based authentication
+- 💰 User dashboard with balance display
+- 🛡️ Protected API routes
+- 📊 Transaction history (future enhancement)
 
-## Prerequisites
-- Node.js and npm installed
-- MongoDB instance (local or cloud)
-- Twilio account for sending OTP SMS (optional, logs OTP if not configured)
+## 🛠️ Tech Stack
 
-## Installation
+**Backend:**
+- Node.js & Express.js
+- MongoDB & Mongoose
+- JWT Authentication
+- Twilio SMS API
+- Rate limiting & Security
 
-### Backend
-1. Navigate to the `backend` directory:
+**Frontend:**
+- React 18
+- Vite
+- Axios
+- Tailwind CSS
+- React Router
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js (v16+)
+- MongoDB
+- Twilio account (optional - will log OTP to console if not configured)
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone
+   cd banking-app
+   ```
+
+2. **Backend Setup**
    ```bash
    cd backend
-   ```
-2. Install dependencies:
-   ```bash
    npm install
    ```
-3. Create a `.env` file in the `backend` directory with the following variables:
-   ```
+   
+   Create `.env` file:
+   ```env
    PORT=5000
-   MONGO_URI=your_mongodb_connection_string
-   JWT_SECRET=your_jwt_secret_key
-   TWILIO_SID=your_twilio_account_sid (optional)
-   TWILIO_AUTH_TOKEN=your_twilio_auth_token (optional)
-   TWILIO_PHONE=your_twilio_phone_number (optional)
+   MONGO_URI=mongodb://localhost:27017/bankingapp
+   JWT_SECRET=your_super_secret_jwt_key
+   TWILIO_SID=your_twilio_sid
+   TWILIO_AUTH_TOKEN=your_twilio_token
+   TWILIO_PHONE=your_twilio_phone
    ```
 
-### Frontend
-1. Navigate to the `frontend` directory:
+3. **Frontend Setup**
    ```bash
    cd frontend
-   ```
-2. Install dependencies:
-   ```bash
    npm install
    ```
 
-## Running the Application
+4. **Run the Application**
+   
+   Backend:
+   ```bash
+   cd backend
+   npm run dev
+   ```
+   
+   Frontend:
+   ```bash
+   cd frontend
+   npm run dev
+   ```
 
-### Backend
-From the `backend` directory, start the server:
-```bash
-npm run dev
-```
-The backend server will run on `http://localhost:5000`.
+## 📱 Usage
 
-### Frontend
-From the `frontend` directory, start the development server:
-```bash
-npm run dev
-```
-The frontend will be available at `http://localhost:3000` (or the port Vite assigns).
+1. Open `http://localhost:3000`
+2. Register with your phone number
+3. Enter OTP received via SMS
+4. Access your dashboard
 
-## API Endpoints
+## 🔌 API Endpoints
 
-### Authentication Routes (`/api/auth`)
-- `POST /send-otp` - Send OTP to a phone number
-- `POST /verify-otp` - Verify OTP and receive JWT token
-- `POST /register` - Register a new user and send OTP
-- `GET /me` - Get current user info (requires JWT token)
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/auth/register` | Register new user |
+| POST | `/api/auth/send-otp` | Send OTP to phone |
+| POST | `/api/auth/verify-otp` | Verify OTP & login |
+| GET | `/api/auth/me` | Get user profile |
 
-## Usage
-- Register or login using your phone number.
-- Receive OTP via SMS (or console log if Twilio not configured).
-- Verify OTP to authenticate and access the dashboard.
-- Dashboard displays user phone and balance (default balance management can be extended).
 
-## Contributing
-Contributions are welcome! Please fork the repository and create a pull request.
+## 🔒 Security Features
 
-## License
-This project is licensed under the ISC License.
+- Rate limiting on API endpoints
+- OTP expiration (5 minutes)
+- JWT token authentication
+- Phone number validation
+- Secure password hashing for OTP
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙋‍♂️ Support
+
+If you have any questions or need help, feel free to open an issue or contact me.
+
+---
+
+⭐ **Star this repo if you found it helpful!**
