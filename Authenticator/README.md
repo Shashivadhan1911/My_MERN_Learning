@@ -111,9 +111,6 @@ A secure MERN stack banking application with OTP-based authentication using phon
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙋‍♂️ Support
 
@@ -122,3 +119,4 @@ If you have any questions or need help, feel free to open an issue or contact me
 ---
 
 ⭐ **Star this repo if you found it helpful!**
+
